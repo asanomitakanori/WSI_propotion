@@ -1,0 +1,50 @@
+# Hydra configuration file for training
+train:
+  imgs: '/home/asanomi/MNISTdata/202203_chemotherapy/mnt1_LEV2/'
+  # imgs: '/workspace/dataset/mnt2_LEV2/'
+  epochs: 1000
+  fold: 3
+  num_workers: 10
+  lr: 0.00001
+  early_stop: 20
+
+eval:
+  imgs: '/home/asanomi/MNISTdata/202203_chemotherapy/mnt1_LEV2/'
+  # imgs: '/workspace/dataset/dataset/'
+  batch_size: 1
+  num_workers: 10
+
+device:
+  num: 1
+
+model:
+  resnet: 18
+  
+# train_seg:
+#   imgs: 'dataset/'
+#   epochs: 1000
+#   batch_size: 1
+#   fold: 3
+#   num_workers: 1
+#   lr: 0.0003
+#   early_stop: 200
+#   dataset_size_level: 3
+#   height: 224
+#   width: 224
+
+# train_UNet:
+#   imgs: 'dataset/'
+#   epochs: 1000
+#   batch_size: 1
+#   fold: 3
+#   num_workers: 4
+#   lr: 0.0003
+#   early_stop: 200
+#   dataset_size_level: 3
+#   height: 224
+#   width: 224
+
+output:
+  dir: logs/
+  dir_segnet: logs_segnet/
+  dir_UNet: logs_UNet/
